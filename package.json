@@ -8,5 +8,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "^3.20.3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.230.1",
+    "uuid": "^3.2.1"
+  }
 }
