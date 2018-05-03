@@ -41,3 +41,9 @@ functions:
       - http:
           path: /animal
           method: post
+  removeSpecies:
+    handler: features/delete.removeSpecies
+    events:
+      - http:
+          path: /animal/{species}
+          method: delete
