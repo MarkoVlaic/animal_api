@@ -13,7 +13,7 @@ module.exports.addSpecies = (event, context, callback) => {
 
   const scanParams = {
     TableName: process.env.DYNAMODB_TABLE,
-    FilterExpression: '#n <> :n',
+    FilterExpression: '#n = :n',
     ExpressionAttributeNames: {
       '#n': 'name'
     },
@@ -33,6 +33,7 @@ module.exports.addSpecies = (event, context, callback) => {
   };
 
   dynamodb.scan(scanParams, (err, species) => {
+    console.log('These are the species', species);
     if(err)errorHandler(err, callback);
     if(!species || species.Items.length === 0){
       dynamodb.put(insertParams, err => {
